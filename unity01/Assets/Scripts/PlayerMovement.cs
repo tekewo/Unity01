@@ -6,10 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed;
     public float jump;
-
-    private float Move;
     public Rigidbody2D rb;
-    // Start is called before the first frame update
+    private float Move;
     void Start()
     {
 
