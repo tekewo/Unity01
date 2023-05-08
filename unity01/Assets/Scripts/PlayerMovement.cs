@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float jump;
     public Rigidbody2D rb;
     private float Move;
+    // Start is called once when game start
     void Start()
     {
 
