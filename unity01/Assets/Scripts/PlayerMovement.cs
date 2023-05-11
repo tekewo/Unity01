@@ -5,12 +5,14 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private Animator _anim;
+    private BoxCollider2D coll;
+    private Animator anim;
     // Start is called before the first frame update
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        _anim = GetComponent<Animator>();
+        coll = GetComponent<BoxCollider2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -26,6 +28,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateAnimationState()
     {
-
+        
     }
+
+    /*
+    private bool IsGrounded()
+    {
+        Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, );
+    }
+    */
 }
