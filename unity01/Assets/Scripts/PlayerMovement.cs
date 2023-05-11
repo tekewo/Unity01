@@ -18,10 +18,14 @@ public class PlayerMovement : MonoBehaviour
     {
         float dirX = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(dirX * 7f, rb.velocity.y); 
-        _anim.SetBool("Run", dirX != 0.0f);
         if(Input.GetButtonDown("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x, 14f);
         }
+    }
+
+    private void UpdateAnimationState()
+    {
+
     }
 }
