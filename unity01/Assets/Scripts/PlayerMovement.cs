@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private SpriteRenderer sprite;
     private BoxCollider2D coll;
     private Animator anim;
 
@@ -16,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sprite = GetComponent<SpriteRenderer>();
         coll = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
     }
@@ -31,7 +33,28 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
 
+        UpdateAnimationUpdate();
     }
+
+        private void UpdateAnimationUpdate()
+    {
+
+        if (dirX > 0f)
+        {
+            anim.SetBool("running",true);
+            sprite.flipX = false;
+        }
+        else if (dirX < 0f)
+        {
+            anim.SetBool("running",true);
+            sprite.flipX = true;
+        }
+        else 
+        {
+            anim.SetBool("running",false);
+        }
+    }
+
 
     private void UpdateAnimationState()
     {
