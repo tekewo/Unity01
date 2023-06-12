@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
+    private Transform tra;
     private Rigidbody2D rb;
     private Animator anim;
     [SerializeField] private AudioSource deathSoundEffect;
     void Start()
     {
+        tra = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
